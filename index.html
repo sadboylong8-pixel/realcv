@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hongly Long | IT Support & Network Administrator Portfolio</title>
+  <meta name="description" content="Professional portfolio of Hongly Long - MIS Graduate, IT Support Specialist, Network Administrator, and Systems Technician based in Phnom Penh.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#0f172a',
+            },
+            accent: {
+              cyan: '#06b6d4',
+              teal: '#14b8a6',
+              emerald: '#10b981',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom refined animations & glassmorphism */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+    .gradient-glow {
+      background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
+    }
+    .terminal-bg {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .animate-pulse-subtle {
+      animation: pulse-subtle 3s infinite ease-in-out;
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white transition-colors duration-300">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-white font-bold font-mono shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          HL
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-slate-900 dark:text-white leading-tight tracking-tight">Hongly Long</span>
+          <span class="text-xs text-brand-600 dark:text-cyan-400 font-medium">IT Support & Network Admin</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#about" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">About</a>
+        <a href="#skills" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Skills</a>
+        <a href="#labs" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Projects & Labs</a>
+        <a href="#experience" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Experience</a>
+        <a href="#education" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">Education</a>
+        <a href="#references" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">References</a>
+      </nav>
+
+      <!-- Action Buttons & Dark Mode -->
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+          <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+        </button>
+
+        <button onclick="openHireModal()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-brand-600 to-cyan-600 hover:from-brand-500 hover:to-cyan-500 text-white text-sm font-semibold shadow-md shadow-brand-500/20 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span>Interview Summary</span>
+        </button>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 space-y-1">
+      <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
+      <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+      <a href="#labs" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Projects & Labs</a>
+      <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Experience</a>
+      <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Education</a>
+      <a href="#references" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">References</a>
+      <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-brand-600 dark:text-cyan-400 font-semibold">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <!-- Ambient glow circles -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 dark:bg-brand-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Text content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <!-- Status pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Available for IT Support & Network Administration Roles
+          </div>
+
+          <div class="space-y-3">
+            <h2 class="text-sm uppercase tracking-widest font-mono text-brand-600 dark:text-cyan-400 font-bold">
+              Management Information Systems (MIS) | Year 3 Student
+            </h2>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.15]">
+              Hi, I'm <span class="bg-gradient-to-r from-brand-600 via-cyan-500 to-blue-600 bg-clip-text text-transparent">Hongly Long</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Passionate IT Support Specialist & Network Administrator based in Phnom Penh. Experienced in diagnosing hardware/software issues, Windows Server & Active Directory, GNS3 network topology, Linux permissions, and CCTV infrastructure.
+            </p>
+          </div>
+
+          <!-- Quick Specs Badges -->
+          <div class="flex flex-wrap gap-2 justify-center lg:justify-start pt-1">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+              <i data-lucide="server" class="w-3.5 h-3.5 text-brand-500"></i> Windows Server & AD
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+              <i data-lucide="network" class="w-3.5 h-3.5 text-cyan-500"></i> Cisco / GNS3 / Wireshark
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+              <i data-lucide="terminal" class="w-3.5 h-3.5 text-emerald-500"></i> Linux Sysadmin
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+              <i data-lucide="camera" class="w-3.5 h-3.5 text-amber-500"></i> CCTV & PoE Switch
+            </span>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold shadow-lg shadow-brand-500/25 transition-all hover:shadow-brand-500/40 hover:-translate-y-0.5">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              Get in Touch
+            </a>
+            <a href="#labs" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-semibold border border-slate-300 dark:border-slate-700 hover:border-brand-500 dark:hover:border-cyan-400 hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all">
+              <i data-lucide="cpu" class="w-4 h-4 text-cyan-500"></i>
+              Explore Lab Projects
+            </a>
+            <button onclick="window.print()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+              <i data-lucide="printer" class="w-4 h-4"></i>
+              <span class="text-sm font-medium">Print / Save PDF</span>
+            </button>
+          </div>
+
+          <!-- Quick contact strip -->
+          <div class="pt-6 border-t border-slate-200 dark:border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-600 dark:text-slate-400">
+            <a href="mailto:honglylong61@gmail.com" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-cyan-400 transition">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-500"></i>
+              <span>honglylong61@gmail.com</span>
+            </a>
+            <a href="tel:0882712565" class="flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-cyan-400 transition">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-500"></i>
+              <span>(+855) 088 271 2565</span>
+            </a>
+            <span class="flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-rose-500"></i>
+              <span>Phnom Penh, Cambodia</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right: Professional Card / Terminal Preview -->
+        <div class="lg:col-span-5">
+          <div class="relative mx-auto max-w-md">
+            
+            <!-- Glow background decoration -->
+            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-600 to-cyan-500 opacity-20 blur-xl"></div>
+            
+            <!-- Main Profile Card -->
+            <div class="relative glass-card rounded-2xl p-6 shadow-xl space-y-6">
+              
+              <!-- Profile Header with photo & status -->
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <!-- Avatar container with fallback and tech border -->
+                  <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-700 via-brand-500 to-cyan-400 p-0.5 shadow-lg">
+                    <div class="w-full h-full rounded-2xl bg-slate-900 flex items-center justify-center overflow-hidden">
+                      <!-- Stylized User Initials / Photo Placeholder -->
+                      <div class="text-white font-extrabold text-2xl font-mono tracking-tighter">
+                        HL
+                      </div>
+                    </div>
+                  </div>
+                  <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900 flex items-center justify-center" title="Online / Open to opportunities">
+                    <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                  </span>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">Hongly Long</h3>
+                    <i data-lucide="badge-check" class="w-5 h-5 text-brand-500 fill-brand-500/20"></i>
+                  </div>
+                  <p class="text-xs text-brand-600 dark:text-cyan-400 font-medium">MIS Student @ SETEC Institute</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                    <i data-lucide="map-pin" class="w-3 h-3"></i> Sangkat Boeng Tumpun, Mean Chey
+                  </p>
+                </div>
+              </div>
+
+              <!-- Terminal Diagnostic Box -->
+              <div class="terminal-bg rounded-xl p-4 font-mono text-xs text-slate-300 space-y-2 shadow-inner">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                    <span class="ml-2 text-[10px] text-slate-400">system-status.sh</span>
+                  </div>
+                  <span class="text-[10px] text-emerald-400 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> READY
+                  </span>
+                </div>
+
+                <div class="space-y-1 text-slate-300 pt-1">
+                  <p><span class="text-cyan-400">$</span> candidate.getRole()</p>
+                  <p class="text-emerald-300 font-semibold pl-3">↳ "IT Support & Network Specialist"</p>
+                  <p><span class="text-cyan-400">$</span> candidate.checkSkills()</p>
+                  <p class="text-slate-400 pl-3">↳ [ActiveDirectory, GNS3, LinuxACL, PC_Cloning, SADP_CCTV, Troubleshooting]</p>
+                  <p><span class="text-cyan-400">$</span> candidate.interviewReadiness()</p>
+                  <p class="text-amber-300 font-semibold pl-3">↳ "100% Prepared to Solve Real Problems"</p>
+                </div>
+              </div>
+
+              <!-- Quick Highlights Grid -->
+              <div class="grid grid-cols-2 gap-3 pt-1">
+                <div class="p-3 rounded-xl bg-slate-100/70 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/60 text-center">
+                  <span class="block text-2xl font-extrabold text-brand-600 dark:text-cyan-400">3rd</span>
+                  <span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">Year MIS Student</span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-100/70 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/60 text-center">
+                  <span class="block text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">100%</span>
+                  <span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">Hands-on Lab Focus</span>
+                </div>
+              </div>
+
+              <!-- Fast Action -->
+              <div class="pt-2">
+                <a href="#references" class="w-full py-2.5 px-4 rounded-xl border border-dashed border-slate-300 dark:border-slate-700 hover:border-brand-500 dark:hover:border-cyan-400 flex items-center justify-between text-xs font-medium text-slate-600 dark:text-slate-300 transition">
+                  <span class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+                    Academic Lecturer References
+                  </span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Value Proposition / Why Hire Me -->
+  <section class="py-12 bg-white/60 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="flex items-start gap-4 p-5 rounded-2xl glass-card">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+            <i data-lucide="wrench" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white text-base">Rapid Diagnostic & Fix</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              Proven ability to isolate hardware failure (RAM, SSD, PSU) and software crashes, performing PC cloning and recovery in minutes.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-5 rounded-2xl glass-card">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
+            <i data-lucide="network" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white text-base">Enterprise Network Setup</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              Configures routers, switches, VLANs, and IP subnets. Skilled in packet inspection with Wireshark and network cabling & testing.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 p-5 rounded-2xl glass-card">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 dark:text-white text-base">Security & User Management</h4>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              Active Directory domain joining, group policies, shared folder permissions, and Linux access control lists (ACLs & UMASK).
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Skills & Tech Stack -->
+  <section id="skills" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600 dark:text-cyan-400">Technical Competencies</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          What I Bring to Your IT Team
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+          A blend of physical hardware maintenance, systems administration, network design, and user support backed by hands-on lab experience.
+        </p>
+      </div>
+
+      <!-- Skills Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. IT Support & Hardware -->
+        <div class="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-t-4 border-t-brand-500 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 dark:text-cyan-400 flex items-center justify-center">
+                <i data-lucide="monitor" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-300">
+                Core Discipline
+              </span>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">IT Support & Hardware</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Computer assembly, diagnosis, and desktop fleet management.</p>
+            </div>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>PC Assembly, component upgrades (RAM, NVMe/SATA SSD, GPU, PSU).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Windows OS installation, automated updates & driver optimization.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Disk cloning, system recovery, data backup & image deployment.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Password recovery, BIOS/UEFI configuration, malware eradication.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Network printer setup, scanner sharing, and driver deployment.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Windows 10/11</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">PC Cloning</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Hardware Repair</span>
+          </div>
+        </div>
+
+        <!-- 2. Network Administration -->
+        <div class="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-t-4 border-t-cyan-500 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+                <i data-lucide="network" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950 text-cyan-600 dark:text-cyan-300">
+                Infrastructure
+              </span>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Network Administration</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Topology design, routing protocols, and traffic analysis.</p>
+            </div>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>GNS3 Network Simulation & topology design for branch offices.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>Cisco Router & Switch setup, VLAN configuration, trunking (802.1Q).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>Static routing, dynamic routing protocols (OSPF, RIP), and DHCP Relay.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>Packet analysis & latency troubleshooting with Wireshark and ICMP Ping.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-500 shrink-0 mt-0.5"></i>
+                <span>Structured cabling (Cat5e/Cat6 RJ45 termination), patch panels & LAN drops.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">GNS3</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">VLANs / Subnetting</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Wireshark</span>
+          </div>
+        </div>
+
+        <!-- 3. Windows Server & Active Directory -->
+        <div class="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-t-4 border-t-blue-600 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                <i data-lucide="server" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-300">
+                Enterprise
+              </span>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Windows Server & AD</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Domain controller services and enterprise directory administration.</p>
+            </div>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0 mt-0.5"></i>
+                <span>Active Directory Domain Services (AD DS) installation and management.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0 mt-0.5"></i>
+                <span>Creating organizational units (OU), user accounts, and security groups.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0 mt-0.5"></i>
+                <span>Joining client workstations to the domain and managing domain profiles.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0 mt-0.5"></i>
+                <span>Configuring shared folders, NTFS permissions, and drive mapping.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 shrink-0 mt-0.5"></i>
+                <span>User access control and standard security credential policies.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Windows Server</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Active Directory</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">NTFS / Shared Folders</span>
+          </div>
+        </div>
+
+        <!-- 4. Linux System Administration -->
+        <div class="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-t-4 border-t-emerald-500 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                <i data-lucide="terminal" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-300">
+                Operating System
+              </span>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Linux Sysadmin</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Command line operations, file security, and user rights management.</p>
+            </div>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>User & group management (`useradd`, `usermod`, `groupadd`, `sudoers`).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Linux permissions: `chmod`, `chown`, UMASK configuration.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Access Control Lists (ACL): `setfacl` & `getfacl` for granular security.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Remote server management via secure OpenSSH (`ssh-keygen`, config).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5"></i>
+                <span>Bash scripting for automated tasks and file management.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Linux CLI</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">POSIX ACLs</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">SSH</span>
+          </div>
+        </div>
+
+        <!-- 5. CCTV & Physical Security Infrastructure -->
+        <div class="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-t-4 border-t-amber-500 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                <i data-lucide="camera" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-300">
+                Surveillance
+              </span>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">CCTV & Hardware Tools</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">IP surveillance deployment, PoE switches, and camera discovery tools.</p>
+            </div>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span>Hikvision SADP Tool: device activation, IP assignment, batch password reset.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span>Dahua IP Config Tool: camera discovery, subnet matching & firmware checks.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span>PoE (Power over Ethernet) switch deployment & power budget calculation.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span>NVR channel pairing, RTSP streaming, and remote viewing configuration.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500 shrink-0 mt-0.5"></i>
+                <span>Cabling runs, weather-proofing, and camera angle optimization.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">SADP Tool</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">IP Config Tool</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">PoE Switches</span>
+          </div>
+        </div>
+
+        <!-- 6. Software Suites & Digital Media -->
+        <div class="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 border-t-4 border-t-purple-500 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-full bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-300">
+                Productivity & Media
+              </span>
+            </div>
+            
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Software & Web Tech</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Design suites, CAD tools, office documentation, and web frontends.</p>
+            </div>
+
+            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-500 shrink-0 mt-0.5"></i>
+                <span>Adobe Creative Cloud: Photoshop, Illustrator, Premiere Pro, After Effects.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-500 shrink-0 mt-0.5"></i>
+                <span>Engineering & Architectural Software: AutoCAD, Revit, 3ds Max maintenance.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-500 shrink-0 mt-0.5"></i>
+                <span>Web Development: Clean HTML5, modern CSS3 styling, responsive layouts.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-500 shrink-0 mt-0.5"></i>
+                <span>Microsoft Office: Advanced Word formatting, Excel analysis, PowerPoint.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-500 shrink-0 mt-0.5"></i>
+                <span>Studio Photography & Video Production for institutional events.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">Adobe CC</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">AutoCAD</span>
+            <span class="px-2 py-0.5 text-[11px] rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono">HTML & CSS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Practical Projects & Hands-On Labs Showcase (Key for Passing Interviews) -->
+  <section id="labs" class="py-20 bg-slate-100/50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600 dark:text-cyan-400">Practical Demonstration</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-1">
+            Hands-on Projects & Lab Architecture
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm mt-2 max-w-xl">
+            Real configurations, lab implementations, and troubleshooting workflows that showcase practical execution ability.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-mono text-slate-500 dark:text-slate-400">Filter:</span>
+          <button onclick="filterLabs('all')" class="lab-filter-btn active px-3 py-1.5 rounded-lg text-xs font-medium bg-brand-600 text-white transition">All Labs</button>
+          <button onclick="filterLabs('network')" class="lab-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition">Network</button>
+          <button onclick="filterLabs('sysadmin')" class="lab-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 transition">SysAdmin</button>
+        </div>
+      </div>
+
+      <!-- Labs Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Lab 1: Multi-VLAN Campus Network in GNS3 -->
+        <div class="lab-card network glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 bg-gradient-to-tr from-slate-900 via-blue-950 to-slate-900 p-5 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="flex items-center justify-between relative z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                  GNS3 Simulation Lab
+                </span>
+                <i data-lucide="network" class="w-5 h-5 text-cyan-400"></i>
+              </div>
+              <div class="relative z-10">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono">Topology Architecture</span>
+                <h3 class="text-lg font-bold text-white">Campus Multi-VLAN & Dynamic Routing</h3>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Designed a complete campus network topology using GNS3. Configured inter-VLAN routing (Router-on-a-Stick), 802.1Q trunking, DHCP scopes, and dynamic routing using OSPF.
+              </p>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Steps Executed:</h4>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-4">
+                  <li>Created isolated VLANs for Admin, Faculty, and Students.</li>
+                  <li>Configured static and OSPF routing protocols between core routers.</li>
+                  <li>Simulated traffic and validated frame tags using Wireshark packet capture.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-cyan-600 dark:text-cyan-400 font-semibold">GNS3 • Cisco IOS • Wireshark</span>
+            <button onclick="showLabDetails('vlan')" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              Details <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 2: Windows Server Active Directory & GPO Deployment -->
+        <div class="lab-card sysadmin glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 bg-gradient-to-tr from-slate-900 via-indigo-950 to-slate-900 p-5 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#818cf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="flex items-center justify-between relative z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                  Active Directory Lab
+                </span>
+                <i data-lucide="server" class="w-5 h-5 text-indigo-400"></i>
+              </div>
+              <div class="relative z-10">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono">Domain Architecture</span>
+                <h3 class="text-lg font-bold text-white">Active Directory DS & User Policy</h3>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Deployed a primary Domain Controller on Windows Server. Structured departmental Organizational Units (OUs), created user accounts, and joined Windows 10/11 client machines.
+              </p>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Steps Executed:</h4>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-4">
+                  <li>Built AD DS with DNS and DHCP server services.</li>
+                  <li>Enforced password complexity and screen lock policies via GPO.</li>
+                  <li>Configured department shared drives with role-based NTFS security permissions.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 font-semibold">Win Server • AD DS • GPO</span>
+            <button onclick="showLabDetails('ad')" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              Details <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 3: Linux User Security, ACLs & Script Automation -->
+        <div class="lab-card sysadmin glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 bg-gradient-to-tr from-slate-900 via-emerald-950 to-slate-900 p-5 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#34d399_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="flex items-center justify-between relative z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  Linux Security Lab
+                </span>
+                <i data-lucide="terminal" class="w-5 h-5 text-emerald-400"></i>
+              </div>
+              <div class="relative z-10">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono">System Hardening</span>
+                <h3 class="text-lg font-bold text-white">POSIX ACLs, UMASK & SSH Security</h3>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Configured enterprise Linux user permissions beyond standard octal modes using POSIX Access Control Lists (`setfacl`), custom UMASK values, and secured SSH key authentication.
+              </p>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Steps Executed:</h4>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-4">
+                  <li>Granular folder access granted to specific groups with `setfacl -m g:dept:rwx`.</li>
+                  <li>Hardened `/etc/ssh/sshd_config` by disabling root password logins.</li>
+                  <li>Wrote automated bash maintenance script for log backup and user auditing.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Linux CLI • ACL • Bash</span>
+            <button onclick="showLabDetails('linux')" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              Details <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 4: Commercial CCTV Surveillance & PoE Network Setup -->
+        <div class="lab-card network glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 bg-gradient-to-tr from-slate-900 via-amber-950 to-slate-900 p-5 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#fbbf24_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="flex items-center justify-between relative z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  Surveillance Lab
+                </span>
+                <i data-lucide="video" class="w-5 h-5 text-amber-400"></i>
+              </div>
+              <div class="relative z-10">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono">Hardware & Telemetry</span>
+                <h3 class="text-lg font-bold text-white">PoE IP Camera Provisioning & NVR</h3>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Deployed and managed IP camera systems using SADP Tool and Dahua IP Config Tool. Integrated PoE switches to supply data and power over single Ethernet runs.
+              </p>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Steps Executed:</h4>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-4">
+                  <li>Batch activated IP cameras and set static subnet IP reservations.</li>
+                  <li>Configured PoE switch power thresholds to prevent voltage dropouts.</li>
+                  <li>Linked video feeds to NVR storage and set motion-triggered recording.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-amber-600 dark:text-amber-400 font-semibold">SADP Tool • Dahua • PoE NVR</span>
+            <button onclick="showLabDetails('cctv')" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              Details <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 5: Rapid Workstation Deployment & Disk Cloning Pipeline -->
+        <div class="lab-card sysadmin glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 bg-gradient-to-tr from-slate-900 via-rose-950 to-slate-900 p-5 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f43f5e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="flex items-center justify-between relative z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                  Fleet Deployment Lab
+                </span>
+                <i data-lucide="copy" class="w-5 h-5 text-rose-400"></i>
+              </div>
+              <div class="relative z-10">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono">Desktop Support</span>
+                <h3 class="text-lg font-bold text-white">System Imaging & Workstation Cloning</h3>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Developed an optimized Windows master image containing core software (Office, Adobe CC, AutoCAD) for high-speed multi-PC cloning and fast disaster recovery.
+              </p>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Steps Executed:</h4>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-4">
+                  <li>Created standardized sysprep master image on high-speed NVMe SSD.</li>
+                  <li>Reduced lab workstation setup time from 3 hours to under 15 minutes.</li>
+                  <li>Automated recovery partition setup for quick rollbacks upon student errors.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-rose-600 dark:text-rose-400 font-semibold">Disk Cloning • Imaging • Sysprep</span>
+            <button onclick="showLabDetails('cloning')" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              Details <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lab 6: Software Installation & License Management -->
+        <div class="lab-card sysadmin glass-card rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="relative h-44 bg-gradient-to-tr from-slate-900 via-cyan-950 to-slate-900 p-5 flex flex-col justify-between overflow-hidden">
+              <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#06b6d4_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <div class="flex items-center justify-between relative z-10">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                  Engineering Software Support
+                </span>
+                <i data-lucide="box" class="w-5 h-5 text-cyan-400"></i>
+              </div>
+              <div class="relative z-10">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-mono">Specialized Tools</span>
+                <h3 class="text-lg font-bold text-white">AutoCAD, Revit, 3ds Max & Adobe CC</h3>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Maintained heavy engineering and design workstations at SETEC Institute. Solved GPU acceleration glitches, licensing server issues, and cache bottlenecks.
+              </p>
+
+              <div class="space-y-2">
+                <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Steps Executed:</h4>
+                <ul class="text-xs text-slate-600 dark:text-slate-400 space-y-1.5 list-disc pl-4">
+                  <li>Configured Autodesk licensing and graphics driver optimizations.</li>
+                  <li>Managed Adobe Creative Cloud multi-user cache cleaning and scratch disks.</li>
+                  <li>Supported architectural design students with rendering crash troubleshooting.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-cyan-600 dark:text-cyan-400 font-semibold">AutoCAD • Revit • 3ds Max • Adobe</span>
+            <button onclick="showLabDetails('autodesk')" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+              Details <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Experience Timeline -->
+  <section id="experience" class="py-20 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600 dark:text-cyan-400">Career Trajectory</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Hands-on Work Experience
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">
+          Real-world technical support, lab maintenance, and client assistance at SETEC Institute.
+        </p>
+      </div>
+
+      <!-- Timeline wrapper -->
+      <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 sm:ml-32 space-y-12">
+        
+        <!-- Job 1: IT Support & Network Support -->
+        <div class="relative pl-6 sm:pl-8 group">
+          <!-- Timeline dot -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand-500 border-4 border-white dark:border-slate-950 group-hover:scale-125 transition-transform"></div>
+          
+          <!-- Date indicator on left for larger screens -->
+          <div class="sm:absolute sm:-left-36 sm:top-1 text-xs font-mono font-bold text-brand-600 dark:text-cyan-400 sm:text-right w-28 mb-2 sm:mb-0">
+            01-May-2026 – Present
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4 hover:shadow-lg transition">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">IT Support & Network Support</h3>
+                <span class="text-sm font-semibold text-brand-600 dark:text-cyan-400">SETEC INSTITUTE</span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60 self-start sm:self-auto">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Active Position
+              </span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Serving as a technical specialist providing first-line and second-line IT and network support across campus faculty, computer labs, and administrative offices.
+            </p>
+
+            <div class="space-y-3 pt-2">
+              <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Responsibilities & Achievements:</h4>
+              <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 list-none">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-1"></i>
+                  <span><strong>Hardware Upgrades & Maintenance:</strong> Installed and replaced RAM, SSDs, monitors, and peripherals for student labs and offices.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-1"></i>
+                  <span><strong>Enterprise Windows Server & AD:</strong> Managed domain accounts, joined workstations to domain, configured group access rights and server file shares.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-1"></i>
+                  <span><strong>Specialized Software Fleet:</strong> Installed and repaired heavy institutional suites (AutoCAD, Revit, 3ds Max, Adobe Photoshop, Illustrator, Premiere Pro, MS Office).</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-1"></i>
+                  <span><strong>Disaster Recovery & Cloning:</strong> Executed complete drive imaging, system backups, and rapid bare-metal restores.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-brand-500 shrink-0 mt-1"></i>
+                  <span><strong>Network & IP Surveillance:</strong> Configured Ethernet cabling, switches, network printers, and CCTV setups using SADP & IP config tools over PoE.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2: IT Assistant Volunteer -->
+        <div class="relative pl-6 sm:pl-8 group">
+          <!-- Timeline dot -->
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-400 dark:bg-slate-600 border-4 border-white dark:border-slate-950 group-hover:scale-125 transition-transform"></div>
+          
+          <!-- Date indicator on left for larger screens -->
+          <div class="sm:absolute sm:-left-36 sm:top-1 text-xs font-mono font-bold text-slate-500 dark:text-slate-400 sm:text-right w-28 mb-2 sm:mb-0">
+            26-Dec-2025 – 01-May-2026
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-4 hover:shadow-lg transition">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">IT Assistant Volunteer</h3>
+                <span class="text-sm font-semibold text-brand-600 dark:text-cyan-400">SETEC INSTITUTE</span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 self-start sm:self-auto">
+                Completed
+              </span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Volunteered with the campus IT operations team, directly helping students and lecturers troubleshoot technical issues and keeping computer labs running smoothly.
+            </p>
+
+            <div class="space-y-3 pt-2">
+              <h4 class="text-xs font-mono font-bold text-slate-900 dark:text-white uppercase tracking-wider">Key Contributions:</h4>
+              <ul class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 space-y-2 list-none">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-1"></i>
+                  <span>Assisted students and lecturers with day-to-day software and hardware troubleshooting.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-1"></i>
+                  <span>Performed clean Windows installations, password resets, and system updates.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-1"></i>
+                  <span>Assembled and configured desktop computers for computer labs.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0 mt-1"></i>
+                  <span>Assisted in basic network patch cabling and testing workstation internet connections.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education & Language Training -->
+  <section id="education" class="py-20 bg-slate-100/50 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600 dark:text-cyan-400">Academic Background</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Education & Language Skills
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">
+          Solid foundational studies combining information systems, sciences, and communication skills.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- University Degree -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 dark:text-cyan-400 flex items-center justify-center">
+              <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+            </div>
+            
+            <div>
+              <span class="text-xs font-mono text-brand-600 dark:text-cyan-400 font-semibold">14-Jan-2024 – Present</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">SETEC INSTITUTE</h3>
+              <p class="text-xs font-semibold text-slate-700 dark:text-slate-300">Bachelor's Degree in MIS (Year 3)</p>
+            </div>
+
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Studying Management Information Systems (MIS) covering computer networks, database systems, software development, graphic design, and IT project management.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800">
+            <span class="inline-flex items-center gap-1 text-[11px] font-mono text-brand-600 dark:text-cyan-400">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Active MIS Degree
+            </span>
+          </div>
+        </div>
+
+        <!-- High School -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center">
+              <i data-lucide="book-open" class="w-5 h-5"></i>
+            </div>
+            
+            <div>
+              <span class="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-semibold">2017 – 2023</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Hun Sen Svay Antor</h3>
+              <p class="text-xs font-semibold text-slate-700 dark:text-slate-300">Science Stream Diploma</p>
+            </div>
+
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              Graduated with a focus in Mathematics, Physics, Chemistry, Biology, Khmer, English, and History. Built strong analytical, logical, and problem-solving thinking.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800">
+            <span class="inline-flex items-center gap-1 text-[11px] font-mono text-slate-500 dark:text-slate-400">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> High School Graduate
+            </span>
+          </div>
+        </div>
+
+        <!-- English Language Training -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+              <i data-lucide="languages" class="w-5 h-5"></i>
+            </div>
+            
+            <div>
+              <span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Jan-2025 – Present</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Southeast Asia Language School</h3>
+              <p class="text-xs font-semibold text-slate-700 dark:text-slate-300">English Language Program</p>
+            </div>
+
+            <div class="space-y-1.5 text-xs text-slate-600 dark:text-slate-400">
+              <p>• <strong>Jan - Apr 2025:</strong> Beginner Level</p>
+              <p>• <strong>Apr - Jul 2025:</strong> Elementary Level</p>
+              <p>• <strong>May 2026 - Present:</strong> Pre-Intermediate Level</p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px]">
+            <span class="text-slate-500">Khmer: <strong>Native</strong></span>
+            <span class="text-brand-600 dark:text-cyan-400">English: <strong>Pre-Intermediate</strong></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Verified Academic References Section (Major Interview Trust Factor) -->
+  <section id="references" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600 dark:text-cyan-400">Credibility & Verification</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Academic & Faculty References
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">
+          Lecturers at SETEC Institute available to verify technical capabilities, work ethic, and dedication.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- Reference 1 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-5 border-l-4 border-l-brand-600 hover:shadow-xl transition">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-brand-600/10 text-brand-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">
+              RR
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Mr. ROEURN Raksmey</h3>
+              <p class="text-xs text-brand-600 dark:text-cyan-400 font-medium">Lecturer at SETEC INSTITUTE</p>
+              <span class="inline-block mt-1 text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">MIS Faculty</span>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm">
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-500"></i>
+              <a href="mailto:roeurnraksmey1611i@gmail.com" class="hover:underline hover:text-brand-600 dark:hover:text-cyan-400">roeurnraksmey1611i@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-500"></i>
+              <a href="tel:85566847180" class="hover:underline hover:text-brand-600 dark:hover:text-cyan-400">(+855) 66 847 180</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reference 2 -->
+        <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-5 border-l-4 border-l-cyan-600 hover:shadow-xl transition">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-2xl bg-cyan-600/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-bold text-xl">
+              PS
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Mr. PHAN Sopha</h3>
+              <p class="text-xs text-brand-600 dark:text-cyan-400 font-medium">Lecturer at SETEC INSTITUTE</p>
+              <span class="inline-block mt-1 text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">MIS Faculty</span>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800 text-xs sm:text-sm">
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-500"></i>
+              <a href="mailto:phansopha2022@gmail.com" class="hover:underline hover:text-brand-600 dark:hover:text-cyan-400">phansopha2022@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-500"></i>
+              <a href="tel:855966572229" class="hover:underline hover:text-brand-600 dark:hover:text-cyan-400">(+855) 96 657 2229</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Contact Section -->
+  <section id="contact" class="py-20 bg-slate-100/50 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        
+        <div class="text-center max-w-xl mx-auto space-y-3 mb-8">
+          <span class="text-xs font-mono font-bold uppercase tracking-widest text-brand-600 dark:text-cyan-400">Get In Touch</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Let's Discuss Job Opportunities
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">
+            Interested in interviewing me for an IT Support, Helpdesk, or Junior Network Administrator role? Feel free to call, email, or send a message below.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
+          <div class="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60">
+            <i data-lucide="phone" class="w-5 h-5 text-emerald-500 mx-auto mb-2"></i>
+            <span class="block text-xs font-mono text-slate-500 dark:text-slate-400">Phone / Telegram</span>
+            <a href="tel:0882712565" class="text-sm font-bold text-slate-900 dark:text-white hover:text-brand-600">088 271 2565</a>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60">
+            <i data-lucide="mail" class="w-5 h-5 text-brand-500 mx-auto mb-2"></i>
+            <span class="block text-xs font-mono text-slate-500 dark:text-slate-400">Email</span>
+            <a href="mailto:honglylong61@gmail.com" class="text-sm font-bold text-slate-900 dark:text-white hover:text-brand-600 break-all">honglylong61@gmail.com</a>
+          </div>
+
+          <div class="p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60">
+            <i data-lucide="map-pin" class="w-5 h-5 text-rose-500 mx-auto mb-2"></i>
+            <span class="block text-xs font-mono text-slate-500 dark:text-slate-400">Location</span>
+            <span class="text-sm font-bold text-slate-900 dark:text-white">Phnom Penh, Cambodia</span>
+          </div>
+        </div>
+
+        <!-- Quick email trigger form -->
+        <form onsubmit="handleContactSubmit(event)" class="space-y-4 max-w-xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-600 dark:text-slate-400 mb-1">Your Name / Company</label>
+              <input type="text" id="contact-name" required placeholder="e.g. ABC Technology Co." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-600 dark:text-slate-400 mb-1">Your Email</label>
+              <input type="email" id="contact-email" required placeholder="hr@company.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-slate-600 dark:text-slate-400 mb-1">Message or Interview Invitation</label>
+            <textarea id="contact-message" rows="3" required placeholder="We would love to invite you for an IT Support interview..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-brand-500 outline-none resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-600 hover:from-brand-500 hover:to-cyan-500 text-white font-bold text-sm shadow-lg shadow-brand-500/25 transition flex items-center justify-center gap-2">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Send Direct Message to Hongly</span>
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p>© 2026 Hongly Long. All Rights Reserved. Built with modern web standards.</p>
+      <p class="font-mono text-[11px]">Management Information Systems • SETEC Institute • Phnom Penh</p>
+    </div>
+  </footer>
+
+  <!-- Modal: 60-Second Interview Cheatsheet / "Why Hire Hongly" -->
+  <div id="hire-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm transition-opacity">
+    <div class="glass-card bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-3xl max-w-2xl w-full p-6 sm:p-8 space-y-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-500/10 text-brand-600 dark:text-cyan-400 flex items-center justify-center">
+            <i data-lucide="award" class="w-4 h-4"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Why Hire Hongly Long? (Interview Summary)</h3>
+        </div>
+        <button onclick="closeHireModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-4 rounded-xl bg-brand-50 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-900/40">
+          <h4 class="font-bold text-brand-900 dark:text-cyan-300 flex items-center gap-2 text-sm">
+            <i data-lucide="check-circle" class="w-4 h-4 text-brand-500"></i>
+            1. Ready for Immediate Technical Work
+          </h4>
+          <p class="mt-1 text-slate-600 dark:text-slate-400">
+            Unlike candidates who only know theory, Hongly has spent years in the SETEC Institute computer labs assembling computers, replacing hardware, fixing Windows OS issues, and imaging disks.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-200 dark:border-cyan-900/40">
+          <h4 class="font-bold text-cyan-900 dark:text-cyan-300 flex items-center gap-2 text-sm">
+            <i data-lucide="network" class="w-4 h-4 text-cyan-500"></i>
+            2. Network & Server Competence
+          </h4>
+          <p class="mt-1 text-slate-600 dark:text-slate-400">
+            Understands how enterprise infrastructure operates: Active Directory domain accounts, GPO restrictions, VLAN partitioning, DHCP/DNS, and Wireshark diagnostics.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/40">
+          <h4 class="font-bold text-emerald-900 dark:text-emerald-300 flex items-center gap-2 text-sm">
+            <i data-lucide="shield" class="w-4 h-4 text-emerald-500"></i>
+            3. Linux & Physical Security (CCTV) Versatility
+          </h4>
+          <p class="mt-1 text-slate-600 dark:text-slate-400">
+            Skilled in Linux terminal administration (ACL permissions, UMASK) and configuring physical IP cameras via SADP tool and PoE switches.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/40">
+          <h4 class="font-bold text-amber-900 dark:text-amber-300 flex items-center gap-2 text-sm">
+            <i data-lucide="user-check" class="w-4 h-4 text-amber-500"></i>
+            4. Dedicated, Fast Learner & Team Player
+          </h4>
+          <p class="mt-1 text-slate-600 dark:text-slate-400">
+            Strong customer-service mindset when dealing with frustrated users, patient troubleshooting manner, and active English language learning.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-2 flex items-center justify-end gap-3">
+        <button onclick="closeHireModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+          Close
+        </button>
+        <a href="#contact" onclick="closeHireModal()" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-xs shadow-md shadow-brand-500/25">
+          Schedule Interview
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal: Lab Detail Drill-Down Modal -->
+  <div id="lab-detail-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm transition-opacity">
+    <div class="glass-card bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-4 shadow-2xl">
+      <div class="flex items-center justify-between pb-2 border-b border-slate-200 dark:border-slate-800">
+        <h3 id="modal-lab-title" class="text-base font-bold text-slate-900 dark:text-white"></h3>
+        <button onclick="closeLabModal()" class="p-1 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="modal-lab-body" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-3"></div>
+      <div class="pt-3 flex justify-end">
+        <button onclick="closeLabModal()" class="px-4 py-2 rounded-xl bg-brand-600 text-white text-xs font-semibold">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for Interactions & Dark Mode -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Dark Mode Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Check saved theme or use system preference
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking nav links
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Lab Category Filter
+    function filterLabs(category) {
+      document.querySelectorAll('.lab-filter-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-600', 'text-white');
+        btn.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      });
+      event.target.classList.add('active', 'bg-brand-600', 'text-white');
+      event.target.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+
+      const cards = document.querySelectorAll('.lab-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'flex';
+        } else if (card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Control: Interview Cheatsheet
+    function openHireModal() {
+      document.getElementById('hire-modal').classList.remove('hidden');
+    }
+    function closeHireModal() {
+      document.getElementById('hire-modal').classList.add('hidden');
+    }
+
+    // Modal Control: Lab Details Drilldown
+    const labDetailsData = {
+      vlan: {
+        title: "Campus Multi-VLAN & Dynamic Routing in GNS3",
+        body: `
+          <p><strong>Environment:</strong> GNS3, Cisco c7200 IOS Router images, Cisco 3725 EtherSwitch, VPCS, and Wireshark.</p>
+          <p><strong>Architecture Details:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>VLAN 10: Administration (Subnet 192.168.10.0/24)</li>
+            <li>VLAN 20: Faculty Staff (Subnet 192.168.20.0/24)</li>
+            <li>VLAN 30: Student Labs (Subnet 192.168.30.0/24)</li>
+          </ul>
+          <p><strong>Troubleshooting Highlights:</strong> Discovered duplicate IP conflicts by inspecting ARP replies in Wireshark. Resolved routing table mismatches by configuring proper passive interfaces in OSPF area 0.</p>
+        `
+      },
+      ad: {
+        title: "Active Directory DS & Group Policy Infrastructure",
+        body: `
+          <p><strong>Environment:</strong> Windows Server 2022 Datacenter, Windows 10/11 Enterprise Clients.</p>
+          <p><strong>Configuration Highlights:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>Set up Forest Root Domain with integrated DNS zone.</li>
+            <li>Created security groups: <code>SG_Finance</code>, <code>SG_Engineering</code>, <code>SG_ITSupport</code>.</li>
+            <li>Configured Group Policy Objects (GPOs) for automatic mapping of departmental network drives based on user group membership.</li>
+            <li>Applied audit policy for failed logon attempts to prevent brute-force attacks.</li>
+          </ul>
+        `
+      },
+      linux: {
+        title: "Linux System Hardening, UMASK & POSIX ACLs",
+        body: `
+          <p><strong>Environment:</strong> Ubuntu Server / Debian / CentOS.</p>
+          <p><strong>Commands & Best Practices Mastered:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>Configured default user creation masks in <code>/etc/login.defs</code> to enforce least privilege (<code>UMASK 027</code>).</li>
+            <li>Used <code>setfacl -R -m g:auditors:rx /var/log/</code> to allow security auditors read access without elevating them to root or sudoers.</li>
+            <li>Protected SSH daemon on non-standard port, disabled root login, and enabled public-key only authentication (Ed25519).</li>
+          </ul>
+        `
+      },
+      cctv: {
+        title: "Commercial IP CCTV Surveillance & PoE Power Management",
+        body: `
+          <p><strong>Hardware & Tools:</strong> Hikvision IP Cameras, SADP Tool, Dahua IP Config Tool, Managed 8-Port PoE Switch (802.3af/at).</p>
+          <p><strong>Deployment Methodology:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>Connected unconfigured cameras to PoE switch; detected uninitialized devices using SADP broadcast.</li>
+            <li>Set static IP addresses matching the isolated security VLAN subnet.</li>
+            <li>Adjusted frame rates (15-20 fps) and H.265 compression bitrate to maximize retention days on NVR storage.</li>
+          </ul>
+        `
+      },
+      cloning: {
+        title: "Workstation Fleet Cloning & Bare-Metal Recovery",
+        body: `
+          <p><strong>Tools:</strong> Macrium Reflect, Clonezilla, Sysprep, Rufus.</p>
+          <p><strong>Workflow:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>Installed Windows OS and updated all security patches and hardware chipset drivers.</li>
+            <li>Pre-installed student software stack: AutoCAD, Adobe CC, MS Office, Visual Studio Code.</li>
+            <li>Executed <code>sysprep /generalize /oobe /shutdown</code> to reset machine SID before image creation.</li>
+            <li>Successfully imaged 30+ PCs in the SETEC computer lab in a single afternoon.</li>
+          </ul>
+        `
+      },
+      autodesk: {
+        title: "Engineering & Multimedia Software Support",
+        body: `
+          <p><strong>Applications:</strong> AutoCAD 2024, Revit, Autodesk 3ds Max, Adobe Photoshop, Premiere Pro.</p>
+          <p><strong>Common Solutions Handled:</strong></p>
+          <ul class="list-disc pl-4 space-y-1">
+            <li>DirectX / OpenGL hardware acceleration bugs causing crash on startup.</li>
+            <li>Network license manager (FLEXnet) port blocking and DNS resolution errors.</li>
+            <li>Resolving Premiere Pro and After Effects media cache bloat causing disk space starvation.</li>
+          </ul>
+        `
+      }
+    };
+
+    function showLabDetails(key) {
+      const data = labDetailsData[key];
+      if (!data) return;
+      document.getElementById('modal-lab-title').innerText = data.title;
+      document.getElementById('modal-lab-body').innerHTML = data.body;
+      document.getElementById('lab-detail-modal').classList.remove('hidden');
+    }
+
+    function closeLabModal() {
+      document.getElementById('lab-detail-modal').classList.add('hidden');
+    }
+
+    // Handle Contact Form Submit (Prepares mailto trigger)
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const message = document.getElementById('contact-message').value;
+
+      const subject = encodeURIComponent(`Interview / Inquiry for Hongly Long from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      
+      window.location.href = `mailto:honglylong61@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
+
